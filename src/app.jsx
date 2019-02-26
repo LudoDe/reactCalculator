@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import isNumber from 'util';
 import Line from './components/line';
 import Result from './components/result';
 
@@ -30,18 +29,17 @@ class App extends Component {
         } else if (e == '='){
             var res;
             try {
-                res = math.eval(this.state.result)
+                res = math.eval(this.state.result);
             } catch(err) {
                 console.error('Invalid operation!');
             };
-            if(isNumber(res)){
+            if(typeof res === 'number'){
                 this.setState({result : res});
             } else this.setState({result : ''});
 
         } else {
             this.setState({result: this.state.result + e.toString()})
         }
-        console.log(this.state.result);
     }
 
     render() {
@@ -50,7 +48,7 @@ class App extends Component {
                 <Result result={this.state.result}/>
                 {
                     Object.keys(this.contents).map((e, k) => {
-                        return <Line elements = {this.contents[e]} key = {k} passInput = {this.processInput.bind(this)}/>
+                        return <Line elements = {this.contents[e]} key = {k} passInput = {this.processInput.bind(this)} parent={this}/>
                     })
                 }
             </app>

@@ -11,7 +11,7 @@ class Line extends Component {
             <div>
                 {
                     this.props.elements.map((e, k) => {
-                        return <Button key={k} element={e} inputed={this.addInput.bind(this)}/>
+                        return <Button key={k} element={e} parent={this.props.parent} inputed={this.addInput.bind(this)}/>
                     })
                 }
             </div>

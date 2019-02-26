@@ -13,12 +13,9 @@ if (isDevMode) enableLiveReload({ strategy: 'react-hmr' });
 const createWindow = async () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 330,
-    height: 182,
-    resizable : false,
-    // frame : false,
-    devTools :  false,
-    transparent: true, 
+    width: 350,
+    height: 180,
+    resizable : false, 
     autoHideMenuBar : true,
     icon: path.join(__dirname, 'ICON.png') 
   });
@@ -27,10 +24,10 @@ const createWindow = async () => {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   // Open the DevTools.
-  // if (isDevMode) {
-  //   await installExtension(REACT_DEVELOPER_TOOLS);
-  //   mainWindow.webContents.openDevTools();
-  // }
+  if (isDevMode) {
+    await installExtension(REACT_DEVELOPER_TOOLS);
+    mainWindow.webContents.openDevTools();
+  }
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {

@@ -36,8 +36,8 @@
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
       "github_repository": {
-        "owner": "Alessio Ludovico De Santis",
-        "name": "reactCalc"
+        "owner": "LudoDe",
+        "name": "reactCalculator"
       },
       "windowsStoreConfig": {
         "packageName": "",

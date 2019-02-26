@@ -1,47 +1,37 @@
+app {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 180px;
+    background-color: #BDBDBD;
+}
 
 Button {
     cursor: pointer; 
     width: 50px;
     height: 30px;
-    border: none;
-    border-radius: 4px;
-    margin-left: 4px;
-    margin-top: 4px;
     background-color: #212121;
     color: #E0E0E0;
     font-size: 14px;
     font-weight: 500;
+
+    border: none;
+    border-radius: 4px;
+    margin-left: 7px;
+    margin-top: 2px;
+    margin-bottom: 3px;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-Line {
-    display: block;
-    width: inherit;
-    margin : auto;
-    flex-direction: row;
-    width: inherit;
-    height: 32px;
-}
-
 Result {
-    display: block;
     text-align: right;
-    width: 320px;
-    margin: 4px;
+    margin: auto;
+    width: 340px;
     height: 32px;
     background-color: grey;
     color : black;
-    box-shadow: 3px 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border : none;
+    border-radius: 3px;
+    box-shadow: 4px 4px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-app {
-    display: block;
-    border-style: solid;
-    /* border-width: 3px; */
-    /* border-radius: 12px; */
-    width: 340px;
-    height: 180px;
-    background-color: #BDBDBD;
-    /* padding: 2px 2px 2px 2px; */
-    /* -webkit-app-region: drag; */
-}
