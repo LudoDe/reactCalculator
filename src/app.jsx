@@ -10,11 +10,12 @@ class App extends Component {
         this.contents = {
             top :       [7, 8, 9, '/', '<', 'C'],
             middle :    [4, 5, 6, '*', '(', ')'],
-            bottom :    [1, 2, 3, '-', '^', 'sqrt'],
+            bottom :    [1, 2, 3, '-', '^', '\u221A'],
             base :      [0, ',', '%', '+', '='],
         }
         this.state = {
             result : '',
+            clearOnInput : true
         }
     }
 
@@ -29,16 +30,20 @@ class App extends Component {
         } else if (e == '='){
             var res;
             try {
-                res = math.eval(this.state.result);
+                res = math.eval(this.state.result.replace("\u221A", "sqrt"));
             } catch(err) {
                 console.error('Invalid operation!');
             };
             if(typeof res === 'number'){
                 this.setState({result : res});
-            } else this.setState({result : ''});
+            } else this.setState({result : 'Invalid operation!', clearOnInput :  true});
 
         } else {
             this.setState({result: this.state.result + e.toString()})
+            if(this.state.clearOnInput === true){
+                this.setState({result : "", clearOnInput : false});
+                console.log("Cleared");
+            }
         }
     }
 
