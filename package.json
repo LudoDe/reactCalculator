@@ -1,6 +1,6 @@
 {
-  "name": "calulator-react",
-  "productName": "calulator-react",
+  "name": "calculator-react",
+  "productName": "calculator-react",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/index.js",
@@ -31,7 +31,7 @@
         "packageManager": "npm"
       },
       "electronWinstallerConfig": {
-        "name": "calulator_react"
+        "name": "calculator_react"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
@@ -41,7 +41,7 @@
       },
       "windowsStoreConfig": {
         "packageName": "",
-        "name": "calulatorreact"
+        "name": "calculatorreact"
       }
     }
   },
