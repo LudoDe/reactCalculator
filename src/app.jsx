@@ -11,11 +11,11 @@ class App extends Component {
             top :       [7, 8, 9, '/', '<', 'C'],
             middle :    [4, 5, 6, '*', '(', ')'],
             bottom :    [1, 2, 3, '-', '^', '\u221A'],
-            base :      [0, ',', '%', '+', '='],
+            base :      [0, '.', '%', '+', '=', 'e'],
         }
         this.state = {
             result : '',
-            clearOnInput : true
+            clearOnInput : false
         }
     }
 
@@ -36,7 +36,10 @@ class App extends Component {
             };
             if(typeof res === 'number'){
                 this.setState({result : res});
-            } else this.setState({result : 'Invalid operation!', clearOnInput :  true});
+            } else if (typeof res === 'object'){
+                this.setState({result : `${res.re} + i${res.im}`, clearOnInput :  true });
+            } 
+            else this.setState({result : 'Invalid operation!', clearOnInput :  true});
 
         } else {
             this.setState({result: this.state.result + e.toString()})
